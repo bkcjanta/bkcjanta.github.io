@@ -15,12 +15,13 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  useColorMode,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const Links = ['Home','About Me','Skills', 'Projects', 'Resume','Contact'];
+const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Resume',id:"#resume"}, {tag:'Contact',id:"#contact"}];
 
-const NavLink = ({ children }) => (
+const NavLink = ({props,onClose }) => (
   <Link
     px={2}
     py={1}
@@ -29,18 +30,24 @@ const NavLink = ({ children }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
-    {children}
+    href={props.id=="#resume"?"https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing":props.id}
+    target={props.id=="#resume"?"_blank":"_parent"}
+    onClick={onClose}
+
+    >
+    {props.tag}
   </Link>
 );
 
-export default function Navbar() {
+export const  Navbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box position={"sticky"} top={0}  bg={useColorModeValue('blue.200', 'blue.700')} px={4} mb={10}>
+        <Flex  w={"100%"} h={16} alignItems={'center'} justifyContent={'space-between'}>
+          
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -48,54 +55,38 @@ export default function Navbar() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+          
+          <HStack  w={{base:"50%",sm:"50%",md:"100%",lg:"100%"}} justifyContent={"space-between"}>
+            <Box color={"red"} >Logo</Box>
+            <Button display={{md:'none',lg:'none'}} onClick={toggleColorMode} p="0px">
+                {colorMode === 'light' ? <MoonIcon m="0px" /> : <SunIcon m="0px " />}
+              </Button>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink onClose={onClose}  key={link} props={link}/>
               ))}
+              <Button  onClick={toggleColorMode} p="0px">
+                {colorMode === 'light' ? <MoonIcon m="0px" /> : <SunIcon m="0px " />}
+              </Button>
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
+
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+            {Links.map((link) => (
+                <NavLink onClose={onClose} key={link} props={link}/>
               ))}
+              
             </Stack>
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }
