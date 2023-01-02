@@ -1,7 +1,16 @@
+*{
+  background:linear-gradient(pink blue);
+}
 html {
   scroll-behavior: smooth;
+ 
+  
 }
+
 #main{
   height: 300px;
   border: 1px solid red;
+}
+.profile{
+  box-shadow: white 0px 1px 1px;
 }

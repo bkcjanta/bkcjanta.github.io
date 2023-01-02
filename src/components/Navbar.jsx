@@ -16,15 +16,16 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Heading,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Resume',id:"#resume"}, {tag:'Contact',id:"#contact"}];
+const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Contact',id:"#contact"}, {tag:'Resume',id:"#resume"}];
 
 const NavLink = ({props,onClose }) => (
-  <Link
-    px={2}
-    py={1}
+  <Link id='navItem'
+      px={2}
+      py={1}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
@@ -35,9 +36,10 @@ const NavLink = ({props,onClose }) => (
     onClick={onClose}
 
     >
-    {props.tag}
+   <h1> {props.tag}</h1>
   </Link>
 );
+const logo="<Bhupendra/>"
 
 export const  Navbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -45,7 +47,7 @@ export const  Navbar=()=> {
 
   return (
     <>
-      <Box position={"sticky"} top={0}  bg={useColorModeValue('blue.200', 'blue.700')} px={4} mb={10}>
+      <Box position={"sticky"} top={0}  bg={useColorModeValue('blue.200', 'blue.700')} px={{base:4,sm:4,md:4,lg:10}} >
         <Flex  w={"100%"} h={16} alignItems={'center'} justifyContent={'space-between'}>
           
           <IconButton
@@ -56,8 +58,8 @@ export const  Navbar=()=> {
             onClick={isOpen ? onClose : onOpen}
           />
           
-          <HStack  w={{base:"50%",sm:"50%",md:"100%",lg:"100%"}} justifyContent={"space-between"}>
-            <Box color={"red"} >Logo</Box>
+          <HStack  w={{base:"65%",sm:"60%",md:"100%",lg:"100%"}} justifyContent={"space-between"}>
+            <Heading size={"sm"} >{logo}</Heading>
             <Button display={{md:'none',lg:'none'}} onClick={toggleColorMode} p="0px">
                 {colorMode === 'light' ? <MoonIcon m="0px" /> : <SunIcon m="0px " />}
               </Button>
@@ -68,8 +70,8 @@ export const  Navbar=()=> {
               {Links.map((link) => (
                 <NavLink onClose={onClose}  key={link} props={link}/>
               ))}
-              <Button  onClick={toggleColorMode} p="0px">
-                {colorMode === 'light' ? <MoonIcon m="0px" /> : <SunIcon m="0px " />}
+              <Button  onClick={toggleColorMode} p="0px"  >
+                {colorMode === 'light' ? <MoonIcon m="0px"  /> : <SunIcon m="0px " />}
               </Button>
             </HStack>
           </HStack>
