@@ -21,8 +21,11 @@ import {
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Contact',id:"#contact"}, {tag:'Resume',id:"#resume"}];
-
+const viewResume=()=>{
+    window.open("https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing")
+}
 const NavLink = ({props,onClose }) => (
+  
   <Link id='navItem'
       px={2}
       py={1}
@@ -31,9 +34,10 @@ const NavLink = ({props,onClose }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={props.id=="#resume"?"https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing":props.id}
+    href={props.id=="#resume"?"https://drive.google.com/uc?export=download&id=1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU":props.id}
     target={props.id=="#resume"?"_blank":"_parent"}
-    onClick={onClose}
+    onClick={props.id=="#resume"?viewResume:onClose}
+    
 
     >
    <h1> {props.tag}</h1>
@@ -79,8 +83,8 @@ export const  Navbar=()=> {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
+          <Box  display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={2}>
             {Links.map((link) => (
                 <NavLink onClose={onClose} key={link} props={link}/>
               ))}

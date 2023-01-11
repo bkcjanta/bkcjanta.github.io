@@ -14,3 +14,10 @@ html {
 .profile{
   box-shadow: white 0px 1px 1px;
 }
+
+.home{
+  background: linear-gradient(25 135 255 255);
+}
+#navItem:active{
+   background-color: yellow;
+}
