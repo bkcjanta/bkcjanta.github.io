@@ -43,7 +43,7 @@ const NavLink = ({props,onClose }) => (
    <h1> {props.tag}</h1>
   </Link>
 );
-const logo="<Bhupendra/>"
+const logo="<BHUPENDRA/>"
 
 export const  Navbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,7 +51,7 @@ export const  Navbar=()=> {
 
   return (
     <>
-      <Box position={"sticky"} top={0}  bg={useColorModeValue('blue.200', 'blue.700')} px={{base:4,sm:4,md:4,lg:10}} >
+      <Box position={"sticky"} top={0} zIndex={5}  bg={useColorModeValue('blue.200', 'blue.700')} px={{base:4,sm:4,md:4,lg:10}} >
         <Flex  w={"100%"} h={16} alignItems={'center'} justifyContent={'space-between'}>
           
           <IconButton
@@ -63,7 +63,7 @@ export const  Navbar=()=> {
           />
           
           <HStack  w={{base:"65%",sm:"60%",md:"100%",lg:"100%"}} justifyContent={"space-between"}>
-            <Heading size={"sm"} >{logo}</Heading>
+            <Heading size={"md"} >{logo}</Heading>
             <Button display={{md:'none',lg:'none'}} onClick={toggleColorMode} p="0px">
                 {colorMode === 'light' ? <MoonIcon m="0px" /> : <SunIcon m="0px " />}
               </Button>
@@ -74,7 +74,7 @@ export const  Navbar=()=> {
               {Links.map((link) => (
                 <NavLink onClose={onClose}  key={link} props={link}/>
               ))}
-              <Button  onClick={toggleColorMode} p="0px"  >
+              <Button   p="0px"  >
                 {colorMode === 'light' ? <MoonIcon m="0px"  /> : <SunIcon m="0px " />}
               </Button>
             </HStack>

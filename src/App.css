@@ -21,3 +21,54 @@ html {
 #navItem:active{
    background-color: yellow;
 }
+.t{
+  transition: transform 1s;
+ 
+}
+.t:hover{
+  transform: rotate(360deg);
+}
+.project-link{
+  cursor: pointer;
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  background-color:rgb(26,32,44);
+  border: 1px solid rgb(26,32,44);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.project-link:hover{
+  background-color: black;
+  border: 1px solid white;
+  text-decoration: none;
+}
+#form{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+#form>input{
+  background-color: black;
+  height: 40px;
+  outline-style: none;
+  padding: 1rem;
+  color: aqua;
+}
+::placeholder{
+  color: aliceblue;
+}
+
+#form>textarea{
+  background-color: black;
+  padding: 1rem;
+  outline: none;
+}
+#form>button{
+  background-color:rgb(44,82,130);
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  margin: auto;
+}

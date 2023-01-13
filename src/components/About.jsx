@@ -4,7 +4,7 @@ export const About = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"}  id="about" py={"4rem"}   >
             <Heading p={"5px"} mb="20px"  borderBottom={"2px"}mx={"auto"} w={"200px"} >About Me</Heading>
-            <Box m={"auto"} w="85%" borderRight={"1px"} borderBottom={"1px"} p={"2rem"} >
+            <Box m={"auto"} w="85%"  p={"2rem"} >
             
             <Stack direction={"row"} justifyContent="space-between" >
                 <Box w={["100%", "60%", "60%"]} textAlign={"left"}>
