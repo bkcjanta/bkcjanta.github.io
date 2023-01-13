@@ -31,7 +31,7 @@ export const Skills = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="skills" py={"4rem"}   >
             <Heading p={"5px"} mb="20px" pb={"10px"} borderBottom={"2px"} mx={"auto"} w={"200px"}>My Skills</Heading>
-            <Box m={"auto"} w="85%" borderLeft={"1px"} textAlign={"center"} borderBottom={"1px"} p={"2rem"} >
+            <Box className="bg-color" m={"auto"} w="85%"  textAlign={"center"}  py={"2rem"} px={["1rem","1rem","2rem"]} boxShadow={"dark-lg"}>
                 <SimpleGrid direction={"row"} columns={[2, 3, 4]} justifyContent={"space-between"} rowGap={10} columnGap={[10, 15, 20]}>
                     {icons?.map((e, i) =>
                         <Link href={e.href} target="_blank">

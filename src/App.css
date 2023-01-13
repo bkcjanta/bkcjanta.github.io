@@ -72,3 +72,31 @@ html {
   border-radius: 5px;
   margin: auto;
 }
+.bg-color:hover{
+  background-color:rgb(28, 36, 50);
+}
+#git{
+  color: rgb(8, 75, 142);
+}
+#git:hover{
+  
+  color: rgb(11,103,194);
+}
+#what{
+color: green;
+}
+#what:hover{
+  color: rgb(27, 181, 27);
+}
+#linkd{
+  color: rgb(8, 75, 142);
+}
+#linkd:hover{
+color: rgb(11,103,194);
+}
+#email{
+color: yellow;
+}
+#email:hover{
+  color: rgb(233, 247, 77);
+}

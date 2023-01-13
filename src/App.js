@@ -2,11 +2,11 @@ import './App.css';
 import { About } from './components/About';
 import { Home } from './components/Home';
 import {Navbar} from './components/Navbar';
-import {useColorMode,Button, useColorModeValue} from "@chakra-ui/react"
 import { Skills } from './components/Skills';
 import { Projetcs } from './components/Projects';
 import { Contact } from './components/Contact';
 import bg from "./assets/bg1.gif"
+import { GitStatus } from './components/GitStatus';
 
 function App() {
   const style={
@@ -21,6 +21,7 @@ function App() {
       <About/>
       <Skills/>
       <Projetcs/>
+      <GitStatus/>
       <Contact/>
 
      
