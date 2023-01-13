@@ -6,7 +6,7 @@ export const Contact = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="contact" py={["1rem", "3rem", "4rem"]}   >
             <Heading p={"5px"} mb="20px" pb={"10px"} borderBottom={"2px"} mx={"auto"} w={"200px"}>Contact </Heading>
-            <Box className="bg-color" m={"auto"} w="85%"  textAlign={"center"}  px={"2rem"} boxShadow={"dark-lg"} py={["1rem","3rem", "5rem"]}>
+            <Box _hover={{bg: useColorModeValue("rgb(146, 188, 212)","rgb(28, 36, 50)" )}} m={"auto"} w="85%"  textAlign={"center"}  px={"2rem"} boxShadow={"dark-lg"} py={["1rem","3rem", "5rem"]}>
                 <Stack direction={["column","column", "row"]}>
                     <Stack w={["100%","100%","50%"]}>
                         <HStack>

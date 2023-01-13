@@ -74,7 +74,7 @@ export const  Navbar=()=> {
               {Links.map((link) => (
                 <NavLink onClose={onClose}  key={link} props={link}/>
               ))}
-              <Button   p="0px"  >
+              <Button onClick={toggleColorMode}  p="0px"  >
                 {colorMode === 'light' ? <MoonIcon m="0px"  /> : <SunIcon m="0px " />}
               </Button>
             </HStack>

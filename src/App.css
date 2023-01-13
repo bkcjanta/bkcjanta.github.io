@@ -72,9 +72,7 @@ html {
   border-radius: 5px;
   margin: auto;
 }
-.bg-color:hover{
-  background-color:rgb(28, 36, 50);
-}
+
 #git{
   color: rgb(8, 75, 142);
 }

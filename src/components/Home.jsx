@@ -2,9 +2,9 @@ import { Box, HStack, Heading, Image, Stack, Text, useColorModeValue } from "@ch
 import profile from "../assets/profile.jpg"
 export const Home = () => {
     return (
-        <Box bg={useColorModeValue('blue.100', 'black.800')}  className="home" id="home" pt={["3rem","5rem"]} >
+        <Box bg={useColorModeValue('blue.100', 'black.800')}  className="home" id="home" pt={["3rem","5rem"]} pb={"3rem"} >
              <Text textAlign="center" mb={"20px"}  fontSize={"20px"} color={useColorModeValue('black', "#b2dfdb")}>Welcome To My Portfolio</Text>
-            <Box className="bg-color" w={"85%"} m={"auto"} py="2rem"  px={[".5rem","1rem","2rem"]} boxShadow={"dark-lg"} >
+            <Box _hover={{bg: useColorModeValue("rgb(146, 188, 212)","rgb(28, 36, 50)" )}}  w={"85%"} m={"auto"} py="2rem"  px={[".5rem","1rem","2rem"]} boxShadow={"dark-lg"} >
            
             <Stack w={"100%"}   justifyContent={"space-between"} py={["1rem","2rem"]}  direction={["column","column","row","row"]}  >
                 <Stack textAlign={["center","center","left"]} spacing={2}>

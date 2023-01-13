@@ -2,12 +2,11 @@ import { Box, HStack, Heading, Image, Link, SimpleGrid, Stack, Text, useColorMod
 import asos from "../assets/projects/asos.jpg"
 import jiomart from "../assets/projects/jiomart.jpg"
 import amazon from "../assets/projects/amazon.jpg"
-import GitHubCalendar from 'react-github-calendar';
 export const Projetcs = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="projects" py={["1rem", "3rem", "4rem"]}   >
             <Heading p={"5px"} mb="20px" borderBottom={"2px"} mx={"auto"} w={"200px"} >Projects</Heading>
-            <Box className="bg-color" m={"auto"} w="85%" py="2rem" px={["1rem","1rem","2rem"]} boxShadow={"dark-lg"}  >
+            <Box _hover={{bg: useColorModeValue("rgb(146, 188, 212)","rgb(28, 36, 50)" )}} m={"auto"} w="85%" py="2rem" px={["1rem","1rem","2rem"]} boxShadow={"dark-lg"}  >
                 <SimpleGrid direction={"row"} columns={[1, 2, 3]} spacing={5} textAlign={"left"} color={"whiteAlpha.700"} >
                     <Stack spacing={4} _hover={{ bg: "blue.900" }} bg={"black"} p={["15px"]} borderRadius={"15px"}  >
                         <Text alignSelf={"center"} fontWeight={"bold"}>Asos clone</Text>

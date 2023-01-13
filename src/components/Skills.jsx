@@ -29,15 +29,15 @@ const icons = [
 
 export const Skills = () => {
     return (
-        <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="skills" py={"4rem"}   >
+        <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="skills" py={"4rem"} color={useColorModeValue( 'black.800','whiteAlpha.800')}  >
             <Heading p={"5px"} mb="20px" pb={"10px"} borderBottom={"2px"} mx={"auto"} w={"200px"}>My Skills</Heading>
-            <Box className="bg-color" m={"auto"} w="85%"  textAlign={"center"}  py={"2rem"} px={["1rem","1rem","2rem"]} boxShadow={"dark-lg"}>
-                <SimpleGrid direction={"row"} columns={[2, 3, 4]} justifyContent={"space-between"} rowGap={10} columnGap={[10, 15, 20]}>
+            <Box _hover={{bg: useColorModeValue("rgb(146, 188, 212)","rgb(28, 36, 50)" )}} m={"auto"} w="85%"  textAlign={"center"}  py={"2rem"} px={["1rem","1rem","2rem"]} boxShadow={"dark-lg"}>
+                <SimpleGrid direction={"row"} columns={[2, 3, 4]} justifyContent={"space-between"} rowGap={10} columnGap={[10, 15, 20]} color={useColorModeValue('white', 'black.800')}>
                     {icons?.map((e, i) =>
                         <Link href={e.href} target="_blank">
                             <Box key={i} border={"1px"} py={"1rem"} _hover={{ bg: "blue.900", zoom: ".9", transition: "rotate(360deg)" }}  borderRadius={"10px"} bg={"black"} >
                                 <Image className="t" m={"auto"} w={"20%"} src={e.src} />
-                                <Text>{e.tag}</Text>
+                                <Text >{e.tag}</Text>
                             </Box>
                         </Link>
                     )}

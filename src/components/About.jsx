@@ -4,10 +4,10 @@ export const About = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"}  id="about" py={"4rem"}   >
             <Heading p={"5px"} mb="20px"  borderBottom={"2px"}mx={"auto"} w={"200px"} >About Me</Heading>
-            <Box className="bg-color" m={"auto"} w="85%"  px={["1rem","1rem","2rem"]} py={["1rem","3rem", "5rem"]} boxShadow={"dark-lg"} >
+            <Box _hover={{bg: useColorModeValue("rgb(146, 188, 212)","rgb(28, 36, 50)" )}} m={"auto"} w="85%"  px={["1rem","1rem","2rem"]} py={["1rem","3rem", "5rem"]} boxShadow={"dark-lg"} >
             
             <Stack direction={["column","column","row"]} justifyContent="space-between" >
-                <Box w={["100%", "100%", "60%"]} textAlign={"left"} color={"whiteAlpha.800"}>
+                <Box w={["100%", "100%", "60%"]} textAlign={"left"} color={useColorModeValue( 'black.800','whiteAlpha.800')}>
                     <Text> Hi, 👋 I'm </Text>
                     <Heading fontSize={["16px","24px","30px"]}  >Bhupendra Kumar Chandrakar</Heading>
                     <Text  fontSize={["12px","14px","16px"]} >From Raipur, Chhattisgarh. I have completed my graduation as a bachelor of engineering in a computer science stream from Govt. Engg. college, Bilaspur, Chattisgarh.
