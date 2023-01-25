@@ -21,11 +21,15 @@ import {
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Contact',id:"#contact"}, {tag:'Resume',id:"#resume"}];
-const viewResume=()=>{
-    window.open("https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing")
+
+const click=()=>{
+  window.open("https://drive.google.com/uc?export=download&id=1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU") 
+  window.open("https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing")  
+  window.location.reload()
+
 }
-const NavLink = ({props,onClose }) => (
-  
+const NavLink = ({props,onClose,click }) => (
+
   <Link id='navItem'
       px={2}
       py={1}
@@ -34,11 +38,8 @@ const NavLink = ({props,onClose }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={props.id=="#resume"?"https://drive.google.com/uc?export=download&id=1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU":props.id}
-    target={props.id=="#resume"?"_blank":"_parent"}
-    onClick={props.id=="#resume"?viewResume:onClose}
-    
-
+    href={props.id}
+    onClick={props.id=="#resume"? click:onClose}
     >
    <h1> {props.tag}</h1>
   </Link>
@@ -48,6 +49,7 @@ const logo="<BHUPENDRA/>"
 export const  Navbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
+
 
   return (
     <>
@@ -72,8 +74,8 @@ export const  Navbar=()=> {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink onClose={onClose}  key={link} props={link}/>
-              ))}
+                <NavLink onClose={onClose} click={click}  key={link} props={link}/>
+              ))}              
               <Button onClick={toggleColorMode}  p="0px"  >
                 {colorMode === 'light' ? <MoonIcon m="0px"  /> : <SunIcon m="0px " />}
               </Button>

@@ -54,7 +54,7 @@ html {
   height: 40px;
   outline-style: none;
   padding: 1rem;
-  color: aqua;
+  color: white;
 }
 ::placeholder{
   color: aliceblue;
@@ -63,6 +63,7 @@ html {
 #form>textarea{
   background-color: black;
   padding: 1rem;
+  color: white;
   outline: none;
 }
 #form>button{
@@ -72,7 +73,6 @@ html {
   border-radius: 5px;
   margin: auto;
 }
-
 #git{
   color: rgb(8, 75, 142);
 }

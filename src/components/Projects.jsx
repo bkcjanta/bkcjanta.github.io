@@ -2,6 +2,7 @@ import { Box, HStack, Heading, Image, Link, SimpleGrid, Stack, Text, useColorMod
 import asos from "../assets/projects/asos.jpg"
 import jiomart from "../assets/projects/jiomart.jpg"
 import amazon from "../assets/projects/amazon.jpg"
+import myntra from "../assets/projects/myntra.jpg"
 export const Projetcs = () => {
     return (
         <Box bg={useColorModeValue('blue.100', 'black.800')} textAlign={"center"} id="projects" py={["1rem", "3rem", "4rem"]}   >
@@ -38,8 +39,19 @@ export const Projetcs = () => {
                         <Text fontSize={"14px"}>It is a indivisual project build by  in 10 days.</Text>
                         <Text fontSize={"14px"}>Tech Stack used :- HTML | CSS | JavaScript | React | Redux | ChakraUI | NodeJS | MongoDB | Github | Netlify etc.</Text>
                         <HStack justifyContent={"space-around"}>
-                            <Link href='#' target={"_blank"} className="project-link">Live</Link>
+                            <Link href='https://clone-8c822.firebaseapp.com/' target={"_blank"} className="project-link">Live</Link>
                             <Link href='https://github.com/bkcjanta/amazon' target={"_blank"} className="project-link">Code</Link>
+                        </HStack>
+                    </Stack>
+                    <Stack spacing={4} _hover={{ bg: "blue.900" }} bg={"black"} p={"15px"} borderRadius={"15px"} >
+                        <Text alignSelf={"center"} fontWeight={"bold"}>Myntra clone</Text>
+                        <Image cursor={"pointer"} src={myntra} opacity={.7} />
+                        <Text fontSize={"14px"}>Myntra is an Indiand e-commerce online store for fashion and beauty products like cloths, footwear,beauty and accessories. </Text>
+                        <Text fontSize={"14px"}>It is a collaborative project build by a team of 5 members in 5 days.</Text>
+                        <Text fontSize={"14px"}>Tech Stack used :- HTML | CSS | JavaScript | React | Redux | ChakraUI | NodeJS | MongoDB | Github | Netlify etc.</Text>
+                        <HStack justifyContent={"space-around"}>
+                            <Link href='https://client-chi-gray.vercel.app/' target={"_blank"} className="project-link">Live</Link>
+                            <Link href='https://github.com/Sunilrath101/shop24' target={"_blank"} className="project-link">Code</Link>
                         </HStack>
                     </Stack>
                 </SimpleGrid>
