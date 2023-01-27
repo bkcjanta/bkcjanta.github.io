@@ -22,12 +22,7 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Links = [{tag:'Home',id:"#home"}, {tag:'About',id:"#about"}, {tag:'Skills',id:"#skills"}, {tag:'Projects',id:"#projects"}, {tag:'Contact',id:"#contact"}, {tag:'Resume',id:"#resume"}];
 
-const click=()=>{
-  window.open("https://drive.google.com/uc?export=download&id=1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU") 
-  window.open("https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing")  
-  window.location.reload()
 
-}
 const NavLink = ({props,onClose,click }) => (
 
   <Link id='navItem'
@@ -49,7 +44,12 @@ const logo="<BHUPENDRA/>"
 export const  Navbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
-
+  const click=()=>{
+    window.open("https://drive.google.com/uc?export=download&id=1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU") 
+    window.open("https://drive.google.com/file/d/1Q1ukOgTEhEE4Rwc2gfCGIuNga2gxVHSU/view?usp=sharing")  
+    window.location.reload()
+  
+  }
 
   return (
     <>
